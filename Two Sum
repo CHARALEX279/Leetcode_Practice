@@ -5,19 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-
-        nums = nums
-        target = target
-        index_list = []
-        track_dict = {}
-
-        for i in range(len(nums)):
-            diff = target - nums[i]
-
-            if diff in track_dict:
-                index_list.append(i)
-                index_list.append(track_dict[diff])
-                return index_list
-
-            else:
-                track_dict[nums[i]] = i
+        seenMap = {} #diffValue: index
+        for index, value in enumerate(nums):
+            diff = target - value
+            if diff in seenMap:
+                return([seenMap[diff], index])
+            seenMap[value]=index
+        return()  
