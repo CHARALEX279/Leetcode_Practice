@@ -1,3 +1,4 @@
+#first successful solution
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         extra = ""
@@ -20,4 +21,24 @@ class Solution:
         if extra != "":
             merged_str = merged_str + extra
         
-        return merged_str      
+        return merged_str   
+
+#community solution
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        merged_str = ""
+        counter = 0
+        w1_len = len(word1)
+        w2_len = len(word2)
+        greatest_len = max(w1_len, w2_len)
+
+        while counter < greatest_len:
+            if counter < w1_len:
+                merged_str += word1[counter]
+            if counter < w2_len:
+                merged_str += word2[counter]
+            counter += 1
+    
+        return merged_str
+
+
