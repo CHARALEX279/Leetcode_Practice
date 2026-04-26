@@ -24,3 +24,8 @@ class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
         if root is None:
             return 0
+        root_path = self.countPath(root, targetSum)
+        left_paths = self.pathSum(root.left, targetSum)
+        right_paths = self.pathSum(root.right, targetSum)
+
+        return root_path + left_paths + right_paths
