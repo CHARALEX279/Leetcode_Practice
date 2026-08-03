@@ -23,4 +23,17 @@ class Solution(object):
             else:
                 right -= 1    
         return max_area
+
+
+#second attempt before reviewing the code! this worked, but time exceeded when running a large list:
+    def maxArea(self, height: List[int]) -> int:
+        max_water = 0
+        for i in range(len(height)):
+            for j in range(i+1,len(height)):
+                area_height = min(height[i], height[j])
+                area_width = abs(i-j)
+                area_total = area_height * area_width
+                max_water = max(max_water,area_total)
+        return max_water
+        
         
