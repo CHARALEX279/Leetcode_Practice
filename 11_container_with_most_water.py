@@ -35,5 +35,23 @@ class Solution(object):
                 area_total = area_height * area_width
                 max_water = max(max_water,area_total)
         return max_water
+
+#third attempt after reviewing! key thing is when to move pointers, when the left height is smaller, move left up. if the right height
+#is smaller, move right down
+    def maxArea(self, height: List[int]) -> int:
+        max_water = 0
+        n = len(height) - 1
+        right = n
+        left = 0
+        while left < right:
+            area_height = min(height[left], height[right])
+            area_width = abs(left-right)
+            area_total = area_height * area_width
+            max_water = max(max_water,area_total)
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -=1
+        return max_water
         
         
