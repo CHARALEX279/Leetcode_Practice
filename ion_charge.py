@@ -23,14 +23,6 @@ def optimized_find_sum(charges):
             if remainder_total == charges[i] or remainder_total == charges[j]:
                 return remainder_total
 
-# def ai_assisted_optimized_find_sum(charges):
-#     list_sum = sum(charges)
-#     for i in range(len(charges)):
-#         for j in range(i+1, len(charges)):
-#             remainder_total = list_sum - (charges[i] + charges[j])
-#             if remainder_total in (charges[i], charges[j]):
-#                 return remainder_total
-
 # sum_res=find_sum(charges)
 sum_res=optimized_find_sum(charges)
 print(sum_res)
