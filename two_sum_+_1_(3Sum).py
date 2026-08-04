@@ -24,6 +24,7 @@ class Solution(object):
             key.append(sorted_nums[i+1])
 
             #total = sorted_nums[i] + sorted_nums[i+1] - initial_sum
+            # key == [i, i+1]
 
             tup_key = tuple(key)
             hashmap[tup_key] = initial_sum * -1
