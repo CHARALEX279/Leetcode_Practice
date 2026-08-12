@@ -16,4 +16,15 @@ class Solution:
         #         return False
         #     max_jumps = max(max_jumps, i+n)
         # return True
-#shift the "goal post" to shift it
+
+#or shift the "goal post" to shift it
+        #goal = len(nums) -1
+
+        #for i in range(len(nums) - 1, -1, -1):
+        #    if i + nums[i] >= goal:
+        #        goal = i
+        
+        # if goal == 0:
+        #     return True
+        # elif goal >0:
+        #     return False
