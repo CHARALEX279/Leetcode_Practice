@@ -16,3 +16,4 @@ class Solution:
         #         return False
         #     max_jumps = max(max_jumps, i+n)
         # return True
+#shift the "goal post" to shift it
